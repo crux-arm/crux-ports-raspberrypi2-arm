@@ -10,6 +10,6 @@ source=(http://stygian.me/crux-arm/distfiles/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
-	make
+	make CFLAGS="-Os" LDFLAGS="-s"
 	make DESTDIR=$PKG install
 }
