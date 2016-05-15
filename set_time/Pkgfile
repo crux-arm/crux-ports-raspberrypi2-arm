@@ -1,0 +1,15 @@
+# Description: save/restore system time based on mtime of program
+# URL: http://erebus.in/projects/set_time.git
+# Maintainer: CRUX System Team, core-ports at crux dot nu
+# Arch Maintainer: CRUX-ARM System Team, devel at crux-arm dot nu
+
+name=set_time
+version=6f412df
+release=1
+source=(http://stygian.me/crux-arm/distfiles/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+	make
+	make DESTDIR=$PKG install
+}
